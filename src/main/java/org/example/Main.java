@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import org.example.programs.Reverse;
@@ -18,20 +19,24 @@ public class Main {
     
             switch (choice) {
                 case 1:
-                    Reverse.reverseArray();
+                    String[] values = Reverse.reverseArray();
+
+                    System.out.print("\nReversed: ");
+                    System.out.println(Arrays.toString(values));
                     break;
                 case 2:
-                    Reverse.reverseString();
+                    String reversedValue = Reverse.reverseString();
+                    System.out.println("Reversed: " + reversedValue);
+                    System.out.println();
                     break;
                 case 3:
-                    System.out.println(Search.searchArray("snowin"));      
+                    System.out.println(Search.searchArray());      
                     break;
                 default:
                     isRunning = false;
                     break;
             }
         }
-
 
         s.close();
     }
@@ -40,7 +45,7 @@ public class Main {
         System.out.println("\n--------Code machine--------");
         System.out.println("1.Reverse an array");
         System.out.println("2.Reverse a string");
-        System.out.println("3. Search a value in an array");
+        System.out.println("3.Search a value in an array");
         System.out.println("4.Exit\n");
     }
 }

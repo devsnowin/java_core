@@ -5,26 +5,31 @@ import java.util.Scanner;
 public class Reverse {
     private static Scanner s = new Scanner(System.in);
     
-    public static void reverseArray() {
-        String values[] = new String[5];
-
+    public static String[] reverseArray() {
         System.out.println("\n--------Reverse an array--------");
 
+        System.out.print("Enter the size: ");
+        int size = s.nextInt();
+        
+        int index = 0;
+        String values[] = new String[size];
+        String reversedValues[] = new String[size];
+
         for (int i = 0; i < values.length; i++){
-            System.out.print("Enter a value: ");
+            System.out.print("\nEnter a value: ");
             String value = s.next();
             values[i] = value;
         }
 
-        System.out.print("Reversed: ");
-        for(int  i = values.length-1; i >= 0; i--) {            
-            System.out.print(values[i] + " ");
+        for(int  i = (values.length)-1; i >= 0; i--) {            
+            reversedValues[index] = values[i];
+            index++;
         }
-        
-        System.out.println();
+
+        return reversedValues;        
     }
     
-    public static void reverseString(){
+    public static String reverseString(){
         System.out.println("\n--------Reverse a string--------");
 
         System.out.print("Enter a value: ");
@@ -35,7 +40,6 @@ public class Reverse {
             reverseValue += value.charAt(i);
         }
 
-        System.out.println("Reversed: " + reverseValue);
-        System.out.println();
+        return reverseValue;
     }
 }

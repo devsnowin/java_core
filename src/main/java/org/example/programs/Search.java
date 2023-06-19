@@ -1,26 +1,25 @@
 package org.example.programs;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Search {
     private static Scanner s = new Scanner(System.in);
     
-    public static String searchArray(String searchkey){
-        String names[] = new String[5];
-
+    public static String searchArray(){
         System.out.println("\n--------Search a value in an array--------");
 
-        for(int i = 0; i < names.length; i++){
-            System.out.print("Enter a value: ");
-            String name = s.next();
-            names[i] = name;
-        }
+        String values[] = {"Apple", "Bannana", "Orange", "Grapes"};
+        System.out.println(Arrays.toString(values));
 
-        for(String name: names){
-            if(name.equals(searchkey)) {
-                return "\nFounded: " + name;
+        System.out.print("Enter a value: ");
+        String searchkey = s.next();
+
+        for(int j = 0;j < values.length; j++){
+            if(values[j].toLowerCase().equals(searchkey.toLowerCase())) {
+                return "\nFounded at the index " + j;
             }
         }
-        return "\nNo value matched";        
+        return "\nNo value matched";
     }
 }
