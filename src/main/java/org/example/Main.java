@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import org.example.programs.Reverse;
 import org.example.programs.Search;
+import org.example.programs.UnhappyNumber;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +33,9 @@ public class Main {
                 case 3:
                     System.out.println(Search.searchArray());      
                     break;
+                case 4:
+                    UnhappyNumber.unhappyNumber();
+                    break;
                 default:
                     isRunning = false;
                     break;
@@ -46,6 +50,7 @@ public class Main {
         System.out.println("1.Reverse an array");
         System.out.println("2.Reverse a string");
         System.out.println("3.Search a value in an array");
-        System.out.println("4.Exit\n");
+        System.out.println("4.Unhappy number");
+        System.out.println("5.Exit\n");
     }
 }
